@@ -5,29 +5,42 @@
 def is_even_len(string: str) -> bool:
     return len(string) % 2 == 0
 
+
 def remove_third_char(string: str) -> str:
     return string[:2]+string[3:]
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
     #return string.replace("w","z")
-    #return string[:6]+chr(0b01111010)+string[7:]
+
     new_string = " "
     for i in string:
-        if i == old_char: new_string += new_char
-        else: new_string += i
+        if i == old_char:
+            new_string += new_char
+        else:
+            new_string += i
     return new_string
 
+
 def get_number_of_char(string: str, char: str) -> int:
-    A = " "
+    a = 0
     for i in string:
-        if i==char: A += 1
-        else: pass
-    return A
+        if i == char:
+            a += 1
+        else:
+            pass
+    return a
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    pass
+    split_sentence = sentence.split()
+    c = 0
+    for w in split_sentence:
+        if w.strip() == word:
+            c += 1
+        else:
+            pass
+    return c
 
 
 def main() -> None:
